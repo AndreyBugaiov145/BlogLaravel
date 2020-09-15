@@ -1,0 +1,231 @@
+header div.poster {
+  text-align: center;
+}
+
+div.section {
+  float: left;
+  position: relative;
+  padding: 80px 0 40px 0;
+}
+
+div.section .container {
+  position: relative;
+  height: 100%;
+  width: 73.1%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+}
+
+div.section main.details {
+  width: 100%;
+}
+
+div.section main.details article {
+  background-color: white;
+}
+
+div.section main.details div.img-publication {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 530px;
+  border: 5px solid #f7f7f7;
+  margin-bottom: 50px;
+}
+
+div.section main.details div.data-publication {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  background-color: #ff7f00;
+  text-align: center;
+  padding-top: 10px;
+  color: white;
+  text-transform: uppercase;
+  line-height: 18px;
+}
+
+div.section main.details div.data-publication span {
+  font-family: Montserrat;
+}
+
+div.section main.details div.data-publication .day {
+  font-size: 23px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+div.section main.details div.data-publication .month {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+div.section main.details div.content-article {
+  float: left;
+  width: 100%;
+  padding: 0;
+}
+
+div.section main.details div.description {
+  margin-bottom: 22px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+div.section main.details div.description h3 {
+  color: #222222;
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+div.section main.details div.description span.master {
+  margin-bottom: 40px;
+  color: #757575;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+div.section main.details div.description span.master::before {
+  content: "\E69C";
+  font-family: 'Stroke-Gap-Icons';
+  margin-right: 8px;
+  font-size: 13px;
+}
+
+div.section main.details div.description span {
+  color: #8b8b8b;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+
+div.section main.details div.social-tags-bar {
+  height: 36px;
+}
+
+div.section main.details div.social-bar {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 1px solid #efefef;
+  border-radius: 18px;
+  width: 165px;
+  margin-left: -5px;
+  padding-right: 14px;
+}
+
+div.section main.details div.social-bar a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.section main.details div.social-bar span {
+  color: #707070;
+}
+
+div.section main.details div.social-bar span::before {
+  margin-top: 3px;
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  color: #757575;
+}
+
+div.section main.details div.social-bar span:hover {
+  color: #d56d07;
+}
+
+div.section main.details div.social-bar span.send-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  -webkit-box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  background-color: #ff7f00;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-right: -8px;
+}
+
+div.section main.details div.social-bar span.send-icon:after {
+  content: "\E6A2";
+  font-family: 'Stroke-Gap-Icons';
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #ffffff;
+}
+
+div.section main.details div.social-bar span.facebook-icon::before {
+  content: "\F09A";
+}
+
+div.section main.details div.social-bar span.twitter-icon::before {
+  content: "\F099";
+}
+
+div.section main.details div.social-bar span.google-icon::before {
+  content: "\F0D5";
+}
+
+div.section main.details div.social-bar span.pinterest-icon::before {
+  content: "\F231";
+}
+
+div.section main.details div.tags-bar {
+  margin-left: 50px;
+}
+
+div.section main.details div.tags-bar span {
+  color: #8b8b8b;
+  font-family: "Open Sans";
+  font-size: 14px;
+  line-height: 24px;
+  margin-right: 10px;
+  font-style: italic;
+}
+
+div.section main.details div.tags-bar span:first-letter {
+  text-transform: uppercase;
+}
+
+div.section main.details div.tags-bar span.tag {
+  color: #757575;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+div.section main.details div.tags-bar span.tag::before {
+  content: "\F02C";
+  margin-right: 8px;
+}
+
