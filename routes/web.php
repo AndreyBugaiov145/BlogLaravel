@@ -18,7 +18,7 @@ Route::get('/publication/{id}','CatalogController@showPublication')->name('publi
 Route::get('/tagPublication/{id}','CatalogController@showPublicationByTag')->name('tagPublication');
 Route::get('/userPublication/{id}','CatalogController@showPublicationByUser')->name('userPublication');
 Route::get('/creataPublication','CatalogController@creataPublication')->name('creataPublication')->middleware('auth');
-Route::post('/creataPublicationSubmit','CatalogController@creataPublicationSubmit')->name('creataPublicationSubmit')->middleware(['auth','CheckFileImg']);
+Route::post('/creataPublicationSubmit','CatalogController@creataPublicationSubmit')->name('creataPublicationSubmit')->middleware('auth');
 
 Route::get('/updatePublication/{id}','CatalogController@updatePublication')->name('updatePublication')->middleware('auth');
 Route::post('/updatePublicationSubmit/{id}','CatalogController@updatePublicationSubmit')->name('updatePublicationSubmit')->middleware('auth');

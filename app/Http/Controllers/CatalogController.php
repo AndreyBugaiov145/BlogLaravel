@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Article;
 use App\User;
 use App\tag;
+//use App\Http\Service\CheckRequest;
+
 class CatalogController extends Controller
 {
     public function showAll()
@@ -49,11 +51,12 @@ class CatalogController extends Controller
     	return view('createPublication');    	
     }
     public function creataPublicationSubmit( Request $reg)
-    {	
-
+    {
     	$article = new Article;
     	$tag = new tag;
     	$file = $reg->file('img');
+
+        //CheckRequest::checkFileType($file);
 
     	$article->header=$reg->input('header');
     	$article->short_description=$reg->input('short_description');
@@ -69,7 +72,7 @@ class CatalogController extends Controller
      	$destinationPath = 'userImg';
      	$file->move($destinationPath,$file->getClientOriginalName());
 
-    	return redirect()->route('catalog')->with('massege','Публикация была добавлна');  	
+    	return redirect()->route('catalog')->with('massege','Публикация была добавлна');
     }
     public function updatePublication($id)
     {	

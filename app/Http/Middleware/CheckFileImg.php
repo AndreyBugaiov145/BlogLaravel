@@ -15,12 +15,14 @@ class CheckFileImg
      */
     public function handle($request, Closure $next)
     {
-        if($request->file('img')!=null){
+       /* if($request->file('img')!=null){
             $file=$request->file('img');
             $img_src=$file->getClientOriginalExtension();
             echo $img_src;
-            return;
+            return $request->route('catalog');
         }
-        return $next($request);
+        return $next($request);*/
+        $request->route('catalog');
+        return ;
     }
 }
