@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Service;
+namespace App\Service;
 
 class CheckRequest
 {
-    public function checkFileType($file)
+    static public function checkFileType($file)
     {
-        var_dump($file);
-        /*if($file('img')!=null){
-            $file=$reg->file('img');
-            $article->img_src=$file->getClientOriginalName();
-            $destinationPath = 'userImg';
-            $file->move($destinationPath,$file->getClientOriginalName());
-        }*/
+        $status =false;
+        $typeImgArray = ['jpg','png','jpeg','svg'];
+        foreach ($typeImgArray as $typeImg) {
+            $typeImg==$file->getClientOriginalExtension()?$status=true:false;
+        }
+
+        return $status;
     }
 }
