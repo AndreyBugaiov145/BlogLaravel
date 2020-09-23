@@ -23,6 +23,10 @@ Route::post('/creataPublicationSubmit','CatalogController@creataPublicationSubmi
 Route::get('/updatePublication/{id}','CatalogController@updatePublication')->name('updatePublication')->middleware('auth');
 Route::post('/updatePublicationSubmit/{id}','CatalogController@updatePublicationSubmit')->name('updatePublicationSubmit')->middleware('auth');
 
+Route::get('/clonePublication/{id}','CatalogController@clonePublication')->name('clonePublication')->middleware('auth');
+Route::post('/clonePublicationSubmit/{id}','CatalogController@clonePublicationSubmit')->name('clonePublicationSubmit')->middleware('auth');
+
+
 Route::get('/deletePublication/{id}','CatalogController@deletePublication')->name('deletePublication')->middleware('auth');
 
 Route::get('/registration', function () {
