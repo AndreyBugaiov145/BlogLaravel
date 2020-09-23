@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\User;
+use App\Service\CheckRequest;
+use App\Http\Requests\ArticleRequest;
 use App\Tag;
 use Illuminate\Http\Request;
 
@@ -56,7 +59,7 @@ class CatalogController extends Controller
         return view('createPublication');
     }
 
-    public function creataPublicationSubmit(Request $reg)
+    public function creataPublicationSubmit(ArticleRequest $reg)
     {
 
         $article = new Article;
@@ -88,18 +91,26 @@ class CatalogController extends Controller
 
     public function updatePublicationSubmit($id, Request $reg)
     {
+        if ($reg->file('img') != null) {
+            $asImageValidation = CheckRequest::checkFileType($reg->file('img'));
+        }
+        if (!$asImageValidation) {
+            return back()->withInput()->with('massege', 'Выбраный файл не являеться изображением');
+        }
+
         $article = Article::find($id);
+
         $article->header = $reg->input('header');
         $article->short_description = $reg->input('short_description');
         $article->description = $reg->input('description');
 
-        if ($reg->file('img') != null) {
-            $file = $reg->file('img');
-            $article->img_src = $file->getClientOriginalName();
-            $destinationPath = 'userImg';
-            $file->move($destinationPath, $file->getClientOriginalName());
-        }
+        $file = $reg->file('img');
+        $article->img_src = $file->getClientOriginalName();
+        $destinationPath = 'userImg';
+        $file->move($destinationPath, $file->getClientOriginalName());
+
         $article->save();
+
         $user = $article->user;
         $tags = $article->tags;
 
