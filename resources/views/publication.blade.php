@@ -14,6 +14,7 @@
                     <h3>{{ $article->header }}</h3>
                     <span class="master">{{$user->name}}
                     	@if( !Auth::guest())
+                            <a href="{{route('clonePublication',['id'=>$article->id])}}" style="margin:0 20px">клонировать</a>
                     	@if ( Auth::user()->id ===$article->user_id )
                            <a href="{{route('deletePublication',['id'=>$article->id])}}" id="deletePublication" style="margin:0 20px">удалить</a>
                            <a href="{{route('updatePublication',['id'=>$article->id])}}" style="margin:0 20px">редактировать</a>

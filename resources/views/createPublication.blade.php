@@ -24,7 +24,7 @@
         </div>
         <div class="form-group form">
             <label for="img">Добавить изображение</label>
-            <input type="file" name="img" id="img" >
+            <input type="file" name="img" id="img" value="C:\OpenServer\domains\BlogLaravel\public\userImg\5e04c21a52a39.jpg">
         </div>
         <input type="submit" value="Добаить статью" name="submit" class="btn btn-success"
                style="margin-right: 20px">

@@ -74,6 +74,7 @@ class CatalogController extends Controller
     public function updatePublication($id)
     {	
     	$article = Article::find($id);
+
     	return view('updatePublication',['article'=>$article]);    	
     }
     public function updatePublicationSubmit($id, Request $reg)
@@ -96,5 +97,34 @@ class CatalogController extends Controller
     	$tags = $article->tags;
 
     	return view('publication',['article'=>$article,'user'=> $user,'tags'=> $tags])->with('massege','Публикация была обновлена');  
+    }
+
+    public function clonePublication($id)
+    {
+        $article = Article::find($id);
+        return view('clonePublication',['article'=>$article]);
+    }
+    public function clonePublicationSubmit($id, Request $reg)
+    {
+        $cloneArticle = Article::find($id);
+        $article = new Article;
+        $tag = $cloneArticle->tags[0];
+
+        $article->header=$reg->input('header');
+        $article->short_description=$reg->input('short_description');
+        $article->description=$reg->input('description');
+        if($reg->file('img')!=null){
+            $file=$reg->file('img');
+            $article->img_src=$file->getClientOriginalName();
+            $destinationPath = 'userImg';
+            $file->move($destinationPath,$file->getClientOriginalName());
+        }else{
+            $article->img_src = $cloneArticle->img_src;
+        }
+
+        $article->save();
+        $article->tags()->attach($tag->id);
+
+        return redirect()->route('catalog')->with('massege','Публикация была добавлна');
     }
 }
